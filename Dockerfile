@@ -1,13 +1,20 @@
-ARG BASE=openeuler/openeuler:22.03-lts-sp4
-FROM ${BASE}
+ARG BASE=openeuler/openeuler:24.03-lts-sp2
+FROM hub.oepkgs.net/${BASE}
 
 ARG TARGETARCH
 ARG LOCAL_PATH=/usr/local
 
 ARG TARGETARCH
 ARG BUILDARCH
-ARG VERSION=17.0.13+11
+ARG VERSION=21.0.9+10
 ARG ARC=x64
+
+ADD data/openEuler.repo /etc/yum.repos.d/openEuler.repo
+RUN sed -i 's/22.03-LTS-SP4/24.03-LTS-SP2/g' /etc/yum.repos.d/openEuler.repo \
+    && yum install -y curl harfbuzz telnet wget bind-utils net-tools findutils fontconfig freetype \
+    && yum clean all \
+    && rm -rf /var/cache/yum \
+    && rm -rf /var/tmp/* /tmp/*
 
 # https://www.openlogic.com/openjdk-downloads
 RUN curl -fSL --output openjdk.tar.gz https://builds.openlogic.com/downloadJDK/openlogic-openjdk/${VERSION}/openlogic-openjdk-${VERSION}-linux-${ARC}.tar.gz
@@ -17,9 +24,6 @@ RUN rm -f openjdk.tar.gz
 ENV JAVA_HOME=/usr/local/java/
 ENV PATH=$JAVA_HOME/bin:$PATH
 ENV CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-
-ADD data/openEuler.repo /etc/yum.repos.d/openEuler.repo
-RUN yum install -y harfbuzz telnet wget bind-utils net-tools findutils fontconfig freetype
 
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Shanghai

@@ -1,0 +1,64 @@
+#generic-repos is licensed under the Mulan PSL v2.
+#You can use this software according to the terms and conditions of the Mulan PSL v2.
+#You may obtain a copy of Mulan PSL v2 at:
+#    http://license.coscl.org.cn/MulanPSL2
+#THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR
+#PURPOSE.
+#See the Mulan PSL v2 for more details.
+
+[OS]
+name=OS
+baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/OS/$basearch/
+metadata_expire=1h
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/OS/$basearch/RPM-GPG-KEY-openEuler
+
+[everything]
+name=everything
+baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/everything/$basearch/
+metadata_expire=1h
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/everything/$basearch/RPM-GPG-KEY-openEuler
+
+[EPOL]
+name=EPOL
+baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/EPOL/main/$basearch/
+metadata_expire=1h
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/OS/$basearch/RPM-GPG-KEY-openEuler
+
+[debuginfo]
+name=debuginfo
+baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/debuginfo/$basearch/
+metadata_expire=1h
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/debuginfo/$basearch/RPM-GPG-KEY-openEuler
+
+[source]
+name=source
+baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/source/
+metadata_expire=1h
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/source/RPM-GPG-KEY-openEuler
+
+[update]
+name=update
+baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/update/$basearch/
+metadata_expire=1h
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/OS/$basearch/RPM-GPG-KEY-openEuler
+
+[update-source]
+name=update-source
+baseurl=https://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/update/source/
+metadata_expire=1h
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/openeuler/openEuler-22.03-LTS-SP4/source/RPM-GPG-KEY-openEuler

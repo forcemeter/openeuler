@@ -6,7 +6,7 @@ ARG LOCAL_PATH=/usr/local
 
 ARG TARGETARCH
 ARG BUILDARCH
-ARG VERSION=21.0.9+10
+ARG VERSION=8u472-b08
 ARG ARC=x64
 
 ADD data/openEuler.repo /etc/yum.repos.d/openEuler.repo
